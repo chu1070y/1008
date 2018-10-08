@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .container{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        transform-style: preserve-3d;
+        perspective: 500px;
+        perspective-origin: 50% 50%;
+    }
+
+    .wrapper{
+        transform-style: preserve-3d;
+        box-sizing: border-box;
+        transition-duration: 2s;
+    }
+
+
+    .wrapper img{
+        transition-duration: 2s;
+    }
+
+    .move1{
+        animation: m1;
+        animation-duration: 3s;
+    }
+
+    @keyframes m1 {
+        25%{
+            transform: translate(300px);
+        }
+        50%{
+            transform: rotateY(50deg);
+        }
+        75%{
+            transform: translate(-300px);
+        }
+
+    }
+
+</style>
+
+<div class="container">
+<div class="wrapper">
+    <img src="sample.jpg">
+</div>
+</div>
+
+<script>
+    document.querySelector("body").addEventListener("click",()=>{
+        if ( document.querySelector(".wrapper").getAttribute("class").indexOf("move1")>=0){
+            document.querySelector(".wrapper").setAttribute("class","wrapper");
+        } else{
+            document.querySelector(".wrapper").setAttribute("class","wrapper move1");
+        }
+    },false);
+</script>
+
+
+</body>
+</html>

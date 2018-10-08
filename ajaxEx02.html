@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="demo">
+    <h2>지하철 환승역 환승인원 정보</h2>
+    <input type="button" onclick="loadDoc()" value="환승 데이터 출력하기">
+</div>
+
+<div class="subway">
+
+</div>
+
+<div class="data">
+
+</div>
+
+</body>
+</html>
+
+<script>
+var data;
+
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+
+            console.log(xhttp.readyState)
+
+            if (this.readyState == 4 && this.status == 200) {
+
+                // document.querySelector(".subway").innerHTML = xhttp.responseText;
+                data = JSON.parse(this.responseText);
+                console.log(data["DATA"][0].sunday);
+            }
+        };
+        xhttp.open("GET", "subway.json", true);
+        xhttp.send();
+    }
+
+
+</script>
+
+
+</body>
+</html>
