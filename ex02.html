@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .wrapper{
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    /*wibkit은 크롬,사파리 moz은 파이어폭스 ms는 익스플로어 css3 transform이라고 검색하면 나온다.*/
+    .sample{
+        transition-duration: 2s;
+        width:700px;
+    }
+
+    /*hover는 올린다는 뜻, scale은 절반 크기로 줄이라는 뜻*/
+    .sample:hover {
+        transform: translateX(200px) rotate(45deg) scale(0.5);
+        width:300px;
+    }
+
+</style>
+
+<div class="wrapper">
+    <img class="sample" src="sample.jpg">
+</div>
+
+</body>
+</html>
