@@ -35,6 +35,8 @@ public class MenuServlet extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 //		response.setContentType("text/html;charset=UTF-8");
+		
+		//text/plain
 		response.setContentType("application/json");
 		
 		List<Menu> menuList = new ArrayList<>();
