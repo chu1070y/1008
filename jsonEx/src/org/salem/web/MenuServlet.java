@@ -1,6 +1,9 @@
 package org.salem.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,21 +14,21 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 /**
- * Servlet implementation class QuizServlet
+ * Servlet implementation class MenuServlet
  */
-@WebServlet("/quiz")
-public class QuizServlet extends HttpServlet {
+@WebServlet("/menu")
+public class MenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QuizServlet() {
+    public MenuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
+    
+    /**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,17 +37,19 @@ public class QuizServlet extends HttpServlet {
 //		response.setContentType("text/html;charset=UTF-8");
 		response.setContentType("application/json");
 		
-		Quiz quiz = new Quiz("추의 퀴즈!! 내 이름은 무엇일까요?",new String[] {"1.연훈","2.여눈","3.여루"},"1");
+		List<Menu> menuList = new ArrayList<>();
+		menuList.add(new Menu("A",3000));
+		menuList.add(new Menu("B",4000));
+		menuList.add(new Menu("C",5000));
+		menuList.add(new Menu("D",6000));
+		menuList.add(new Menu("E",7000));
 		
+		Collections.shuffle(menuList);
+
 		Gson gson = new Gson();
-		String json = gson.toJson(quiz);
+		String json = gson.toJson(menuList.get(0));
 		
 		response.getWriter().print(json);
-		
-		
-		
-		
-		
 	}
 
 }
