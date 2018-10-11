@@ -10,6 +10,7 @@ public class TodoService {
 	private static int sequence = 0;
 	private static List<Todo> todoList = new ArrayList<>();
 	
+	//맨 처음 한번만 실행시키고 싶을때
 	static {
 		for(int i = 0; i < 10; i++) {
 			Todo todo = new Todo();
