@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class AjaxFilter
  */
-@WebFilter({"/quiz","/idCheck","/menu"})
+@WebFilter({"/quiz","/idCheck","/menu","/todo/*"})
 public class AjaxFilter implements Filter {
 
     /**
