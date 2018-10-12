@@ -5,7 +5,6 @@ public class Todo {
 	private Integer pk;
 	private String title;
 	
-	
 	//이펙티브 자바에 정확하게 설명이 써있습니다.
 	@Override
 	public int hashCode() {
